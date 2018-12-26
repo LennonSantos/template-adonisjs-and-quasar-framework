@@ -62,7 +62,11 @@ export default {
           this.$router.push({name: 'dashboard'})
         })
         .catch(error => {
-          console.log(error)
+          this.$q.dialog({
+            title: 'Erro!',
+            message: error.response.data[0].message
+          })
+          console.log(error.response)
         })
     }
   },
@@ -70,8 +74,6 @@ export default {
     if (this.$store.state.Auth.loggedIn) {
       this.$router.push({name: 'dashboard'})
     }
-    // console.log(this.$store.state.example.Auth.loggedIn)
-    // console.log(this.$store.commit)
   }
 }
 </script>

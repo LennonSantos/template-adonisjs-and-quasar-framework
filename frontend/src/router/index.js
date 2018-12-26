@@ -25,7 +25,7 @@ export default function ({ store }) {
   Router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
       if (store.state.Auth.loggedIn) {
-        console.log(to.meta.permissions)
+        console.log(to.meta.permisions)
         next()
       } else {
         next({name: 'login'})

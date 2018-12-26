@@ -17,8 +17,14 @@ const routes = [
         component: () => import('pages/admin/Dashboard.vue'),
         meta: {
           requiresAuth: true,
-          permissions: ['page_dashboard_view', 'administrator']
+          permisions: ['page_dashboard_view', 'administrator']
         }
+      },
+      {
+        path: 'roles',
+        name: 'roles',
+        component: () => import('pages/admin/Roles.vue'),
+        meta: {requiresAuth: true}
       }
     ]
   },

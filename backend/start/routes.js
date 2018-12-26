@@ -23,6 +23,9 @@ Route.get('/', () => {
 Route.post('authenticate', 'AuthController.authenticate')
 Route.post('register', 'AuthController.register')
 
+Route.resource('roles', 'RoleController').apiOnly().middleware(['auth'])
+Route.resource('permisions', 'PermisionController').apiOnly().middleware(['auth'])
+
 Route.post('teste', () => {
   return {msg: 'ok'}
 }).middleware(['auth'])
